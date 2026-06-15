@@ -1,9 +1,6 @@
-08:57:06 **** Incremental Build of configuration Debug for project 001 Hello World ****
+23:31:07 **** Incremental Build of configuration Debug for project 001 Hello World ****
 make -j8 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32wb55cgux.d" -MT"Startup/startup_stm32wb55cgux.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32wb55cgux.o" "../Startup/startup_stm32wb55cgux.s"
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32WB55CGUx -DSTM32WB -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32WB55CGUx -DSTM32WB -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
-arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32WB55CGUx -DSTM32WB -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
 arm-none-eabi-gcc -o "001 Hello World.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Programs\Embedded C\MCU1 Driver Development\MCU 1\001 Hello World\STM32WB55CGUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="001 Hello World.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: 001 Hello World.elf
  
@@ -16,5 +13,5 @@ Finished building: default.size.stdout
 Finished building: 001 Hello World.list
  
 
-08:57:07 Build Finished. 0 errors, 0 warnings. (took 823ms)
+23:31:08 Build Finished. 0 errors, 0 warnings. (took 346ms)
 
