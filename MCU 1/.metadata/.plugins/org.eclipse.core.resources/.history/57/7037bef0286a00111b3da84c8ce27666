@@ -43,28 +43,17 @@ int main(void)
 
 	//3. Switch the system clock to HSE (RXX_CFGR)  //Page no: 168
 	//Bits 1:0 SW: System clock switch (01: HSE oscillator selected as system clock)
-	// Clear SW[1:0]
-	*pRccCfgrReg &= ~(0x3 << 0);
-
-	// Select HSE as SYSCLK (01)
-	*pRccCfgrReg |= (0x1 << 0);
+	*pRccCfgrReg |= (1<<0);
 
 	//****** Do MCO1 setting to measure it ******//Page no: 167
 
 
 	//1. Configure the RCC_CFGR Register
-	// Clear MCO1[1:0]
-	*pRccCfgrReg &= ~(0x3 << 21);
-
-	// Select HSE (10)
-	*pRccCfgrReg |= (0x2 << 21);
+	*pRccCfgrReg |= (1<<22);  //clear 21 and  set 22 bit position
 
 	//Configure MCO1 prescaler   (This for divisor as 4 for logic analyzer view using saleae)
-	// Clear MCO1PRE[2:0]
-	*pRccCfgrReg &= ~(0x7 << 24);
-
-	// Select divide by 4 (110)
-	*pRccCfgrReg |= (0x6 << 24);
+	*pRccCfgrReg |= (1<<25);
+	*pRccCfgrReg |= (1<<26);
 
 	//2. Configure PA8 to AF0 mode to behave as a MC01 signal
 
