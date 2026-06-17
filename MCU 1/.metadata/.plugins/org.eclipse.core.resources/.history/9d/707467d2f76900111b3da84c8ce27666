@@ -32,7 +32,7 @@ int main(void)
 	//1. Configure the RCC_CFGR Register
 	*pRccCfgrReg &= ~(0x3<<21); //clear 21 and 22 bit position
 
-	//Configure MCO1 prescaler   (This for divisor as 4 for logic analyzer view using saleae)
+	//Configure MCO1 prescaler   (This for divisor as 4 for logic analyzer view using sealea)
 	*pRccCfgrReg |= (1<<25);
 	*pRccCfgrReg |= (1<<26);
 

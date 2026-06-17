@@ -21,7 +21,7 @@
 
 
 #define RCC_BASE_ADDR			0x40023800UL
-#define GPIOA_BASE_ADDR    		0x40020000UL
+#define GPIOA_BASE_ADDR    0x40020000UL
 
 #define RCC_CFGR_REG_OFFSET		0X08UL
 
@@ -30,11 +30,7 @@ int main(void)
 {
 	uint32_t *pRccCfgrReg = (uint32_t*)RCC_CFGR_REG_ADDR;
 	//1. Configure the RCC_CFGR Register
-	*pRccCfgrReg &= ~(0x3<<21); //clear 21 and 22 bit position
-
-	//Configure MCO1 prescaler   (This for divisor as 4 for logic analyzer view using saleae)
-	*pRccCfgrReg |= (1<<25);
-	*pRccCfgrReg |= (1<<26);
+	*pRccCfgrReg &= ~(0x3<<21);
 
 	//2. Configure PA8 to AF0 mode to behave as a MC01 signal
 
