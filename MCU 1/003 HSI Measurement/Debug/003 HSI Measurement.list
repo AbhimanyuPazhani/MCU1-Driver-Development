@@ -37,17 +37,17 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_rnglists 0000002c  00000000  00000000  00001510  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  00000fa6  00000000  00000000  0000153c  2**0
+ 17 .debug_macro  00000fac  00000000  00000000  0000153c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   000004a6  00000000  00000000  000024e2  2**0
+ 18 .debug_line   000004a6  00000000  00000000  000024e8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    00003d4d  00000000  00000000  00002988  2**0
+ 19 .debug_str    00003d6a  00000000  00000000  0000298e  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000043  00000000  00000000  000066d5  2**0
+ 20 .comment      00000043  00000000  00000000  000066f8  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  00000058  00000000  00000000  00006718  2**2
+ 21 .debug_frame  00000058  00000000  00000000  0000673c  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 22 .debug_line_str 00000072  00000000  00000000  00006770  2**0
+ 22 .debug_line_str 00000072  00000000  00000000  00006794  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -117,7 +117,7 @@ int main(void)
 
 
 	//b) Configure the code of GPIOA pin 8 as alternate function mode
-	uint32_t *pGPIOAModeReg = (uint32_t*)(RCC_BASE_ADDR + 00);
+	uint32_t *pGPIOAModeReg = (uint32_t*)(GPIOA_BASE_ADDR + 00);
  80001ee:	4b0e      	ldr	r3, [pc, #56]	@ (8000228 <main+0x60>)
  80001f0:	607b      	str	r3, [r7, #4]
 	*pGPIOAModeReg &= ~(0X3 <<16);  //Clear
@@ -134,7 +134,7 @@ int main(void)
  8000208:	601a      	str	r2, [r3, #0]
 
 	//c) Configure the alternation function register to set the mode 0 for PA8
-	uint32_t *pGPIOAAltFunHighReg = (uint32_t *)(RCC_BASE_ADDR + 0x24);
+	uint32_t *pGPIOAAltFunHighReg = (uint32_t *)(GPIOA_BASE_ADDR + 0x24);
  800020a:	4b08      	ldr	r3, [pc, #32]	@ (800022c <main+0x64>)
  800020c:	603b      	str	r3, [r7, #0]
 	*pGPIOAAltFunHighReg &= ~(0xf<<0);
@@ -150,8 +150,8 @@ int main(void)
  800021e:	bf00      	nop
  8000220:	40023808 	.word	0x40023808
  8000224:	40023830 	.word	0x40023830
- 8000228:	40023800 	.word	0x40023800
- 800022c:	40023824 	.word	0x40023824
+ 8000228:	40020000 	.word	0x40020000
+ 800022c:	40020024 	.word	0x40020024
 
 08000230 <Reset_Handler>:
 
