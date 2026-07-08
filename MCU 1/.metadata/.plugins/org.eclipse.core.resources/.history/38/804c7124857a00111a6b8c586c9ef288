@@ -10,10 +10,8 @@
 
 
 //Base address of Flash and SRAM
-#define FLASH_BASEADDR    		0x00800000U
-#define SRAM1_BASEADDR			0x20000000U
-#define SRAM2_BASEADDR			0x20001C00U
-#define ROM_BASEADR				0x1FFF0000U
-#define SRAM					SRAM1_BASEADDR
+#define FLASH_BASEADDR    		0x008000
+#define SRAM1_BASEADDR
+#define SRAM_SRAM1_BASEADDR
 
 #endif /* INC_STM32F407XX_H_ */
