@@ -12,3 +12,52 @@ Finished building: default.size.stdout
  
 Finished building: 005 stm32f4xx_drivers.list
  
+12:13:22 **** Build of configuration Debug for project 001 Hello World ****
+make -j8 all 
+arm-none-eabi-size  001\ Hello\ World.elf 
+   text	   data	    bss	    dec	    hex	filename
+    608	      0	   1568	   2176	    880	001 Hello World.elf
+Finished building: default.size.stdout
+ 
+12:13:22 **** Build of configuration Debug for project 002 PeriClockEnable ****
+make -j8 all 
+arm-none-eabi-size  002\ PeriClockEnable.elf 
+   text	   data	    bss	    dec	    hex	filename
+    696	      0	   1568	   2264	    8d8	002 PeriClockEnable.elf
+Finished building: default.size.stdout
+ 
+12:13:22 **** Build of configuration Debug for project 003 HSI Measurement ****
+make -j8 all 
+arm-none-eabi-size  003\ HSI\ Measurement.elf 
+   text	   data	    bss	    dec	    hex	filename
+    772	      0	   1568	   2340	    924	003 HSI Measurement.elf
+Finished building: default.size.stdout
+ 
+12:13:23 **** Build of configuration Debug for project 004 HSE Measurement ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "004 HSE Measurement.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Programs\Embedded C\MCU1 Driver Development\MCU 1\004 HSE Measurement\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="004 HSE Measurement.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 004 HSE Measurement.elf
+ 
+arm-none-eabi-size  004\ HSE\ Measurement.elf 
+arm-none-eabi-objdump -h -S 004\ HSE\ Measurement.elf  > "004 HSE Measurement.list"
+   text	   data	    bss	    dec	    hex	filename
+    840	      0	   1568	   2408	    968	004 HSE Measurement.elf
+Finished building: default.size.stdout
+ 
+Finished building: 004 HSE Measurement.list
+ 
+12:13:24 **** Build of configuration Debug for project 005 stm32f4xx_drivers ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"D:/Programs/Embedded C/MCU1 Driver Development/MCU 1/005 stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "005 stm32f4xx_drivers.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Programs\Embedded C\MCU1 Driver Development\MCU 1\005 stm32f4xx_drivers\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="005 stm32f4xx_drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 005 stm32f4xx_drivers.elf
+ 
+arm-none-eabi-size  005\ stm32f4xx_drivers.elf 
+arm-none-eabi-objdump -h -S 005\ stm32f4xx_drivers.elf  > "005 stm32f4xx_drivers.list"
+   text	   data	    bss	    dec	    hex	filename
+    652	      0	   1568	   2220	    8ac	005 stm32f4xx_drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: 005 stm32f4xx_drivers.list
+ 
