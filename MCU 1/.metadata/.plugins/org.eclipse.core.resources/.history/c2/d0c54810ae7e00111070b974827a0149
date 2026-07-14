@@ -94,7 +94,6 @@ typedef struct
 	uint32_t ODR;									//GPIO port output data register
 	uint32_t BSRR;									//GPIO port bit set/reset register
 	uint32_t LCKR;									//GPIO port configuration lock register
-	uint32_t AFR[2];								//AFR[0] GPIO alternate function low register & AF[1] GPIO alternate function High register.
 
 }GPIO_RegDef_t;
 
