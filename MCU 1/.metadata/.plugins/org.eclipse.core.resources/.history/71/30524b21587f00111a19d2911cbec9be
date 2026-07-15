@@ -191,7 +191,7 @@ typedef struct
 #define USART1_PCLK_EN()			(RCC->APB2ENR |=(1<<04))
 #define USART2_PCLK_EN()			(RCC->APB1ENR |=(1<<17))
 #define USART3_PCLK_EN()			(RCC->APB1ENR |=(1<<18))
-#define USART6_PCLK_EN()			(RCC->APB2ENR |=(1<<05))
+#define USART6_PCLK_EN()			(RCC->APB1ENR |=(1<<05))
 /*
  * Clock Enable Macros for SYSCFGx Peripherals
  */
@@ -230,22 +230,10 @@ typedef struct
 #define USART1_PCLK_DI()			(RCC->APB2ENR &= ~(1<<04))
 #define USART2_PCLK_DI()			(RCC->APB1ENR &= ~(1<<17))
 #define USART3_PCLK_DI()			(RCC->APB1ENR &= ~(1<<18))
-#define USART6_PCLK_DI()			(RCC->APB2ENR &= ~(1<<05))
+#define USART6_PCLK_DI()			(RCC->APB1ENR &= ~(1<<05))
 /*
  * Clock Disable Macros for SYSCFGx Peripherals
  */
 #define SYSCFG_PCLK_DI()			(RCC->APB2ENR &= ~(1<<14))
-
-/*
- * Some Generic Macros
- */
-
-#define ENABLE 						1
-#define DISABLE						0
-#define SET							ENABLE
-#define RESET						DISABLE
-#define GPIO_PIN_SET				SET
-#define GPIO_PIN_RESET				RESET
-
 
 #endif /* INC_STM32F407XX_H_ */
