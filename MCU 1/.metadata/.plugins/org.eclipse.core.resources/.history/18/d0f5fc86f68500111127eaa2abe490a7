@@ -38,7 +38,7 @@ void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi)
 
 	}else
 	{
-		//To Do from ref manual
+		//To Do
 	}
 
 }
