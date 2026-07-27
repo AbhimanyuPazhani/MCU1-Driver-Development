@@ -1,0 +1,78 @@
+/*
+ * stm32f407xx_gpio_driver.c
+ *
+ *  Created on: Jul 14, 2026
+ *      Author: CITI
+ */
+
+
+#include <stm32f407xx_gpio_driver.h>
+#include<stdio.h>
+
+/*
+ * Peripheral Clock Setup
+ */
+
+/*********************************************************************
+ * @fn      		  - GPIO_PeriClockControl
+ *
+ * @brief             - This function enables or disables peripheral clock for the given GPIO port
+ *
+ * @param[in]         - base address of the gpio peripheral
+ * @param[in]         - ENABLE or DISABLE macros
+ * @param[in]         -
+ *
+ * @return            -  none
+ *
+ * @Note              -  none
+
+ */
+void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi)
+{
+	if (EnorDi == ENABLE)
+	{
+		if (pGPIOx ==  GPIOA)
+		{
+			GPIOA_PCLK_EN();
+		}elseif (pGPIOx == GPIOB)
+		{
+
+		}
+
+	}else
+	{
+		//To Do from ref manual
+	}
+
+}
+
+/*
+ * Init and DeInit
+ */
+void GPIO_Init(GPIO_Handle_t *pGPIOHandle)
+{
+
+}
+void GPIO_DeInit(GPIO_RegDef_t *pGPIOx)
+{
+
+}
+
+/*
+ * Date read and write
+ */
+
+uint8_t GPIO_ReadFromInputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber);
+uint16_t GPIO_ReadFromInputPort(GPIO_RegDef_t *pGPIOx);
+
+void GPIO_WriteToOuputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber, uint8_t Value);
+void GPIO_WriteToOutputPort(GPIO_RegDef_t *pGPIOx, uint16_t Value);
+void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber);
+
+/*
+ * IRQ configuration and ISR Handling
+ */
+void GPIO_IRQConfig(uint8_t IRQNumber, uint8_t IRQPriority, uint8_t EnorDi);
+void GPIO_IRQHandling(uint8_t PinNumber);
+
+
