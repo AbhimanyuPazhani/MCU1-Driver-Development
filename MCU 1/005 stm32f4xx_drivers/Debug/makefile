@@ -60,8 +60,8 @@ all: main-build
 main-build: 005\ stm32f4xx_drivers.elf secondary-outputs
 
 # Tool invocations
-005\ stm32f4xx_drivers.elf 005\ stm32f4xx_drivers.map: $(OBJS) $(USER_OBJS) D:\Programs\Embedded\ C\MCU1\ Driver\ Development\MCU\ 1\005\ stm32f4xx_drivers\STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "005 stm32f4xx_drivers.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Programs\Embedded C\MCU1 Driver Development\MCU 1\005 stm32f4xx_drivers\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="005 stm32f4xx_drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+005\ stm32f4xx_drivers.elf 005\ stm32f4xx_drivers.map: $(OBJS) $(USER_OBJS) D:\Projects\MCU1-Driver-Development\MCU\ 1\005\ stm32f4xx_drivers\STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "005 stm32f4xx_drivers.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Projects\MCU1-Driver-Development\MCU 1\005 stm32f4xx_drivers\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="005 stm32f4xx_drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

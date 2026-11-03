@@ -132,23 +132,27 @@ void GPIO_Init(GPIO_Handle_t *pGPIOHandle)
 	}
 	temp =0;
 	//2. Configure the speed
-	temp = (pGPIOHandle->GPIO_PinConfig.GPIO_PinSpeed << (2 * pGPIOHandle->GPIO_PinConfig.GPIO_Pin_Number));
-	pGPIOHandle->pGPIOx->SPEEDR = temp;
+	temp = (pGPIOHandle->GPIO_PinConfig.GPIO_PinSpeed << (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
+	pGPIOHandle->pGPIOx->OSPEEDR = temp;
 
 	temp = 0;
 
 	//3. Configure the PUPD settings
-	temp = (pGPIOHandle->GPIO_PinConfig.GPIO_PinPuPdControl  << (2 * pGPIOHandle->GPIO_PinConfig.GPIO_Pin_Number));
+	temp = (pGPIOHandle->GPIO_PinConfig.GPIO_PinPuPdControl  << (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
 	pGPIOHandle->pGPIOx->PUPDR = temp;
 
 	temp = 0;
 	//4. Configure the OPTYPE
-	temp = (pGPIOHandle->GPIO_PinConfig.GPIO_PinOPType == l  << pGPIOHandle->GPIO_PinConfig.GPIO_Pin_Number);
+	temp = (pGPIOHandle->GPIO_PinConfig.GPIO_PinOPType << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
 	pGPIOHandle->pGPIOx->OTYPER = temp;
 
 
 
 	//5. Configure the ALT Functionality
+	if(pGPIOHandle->GPIO_PinConfig.GPIO_PinMode == GPIO_MODE_ALTFN)
+	{
+		//Config the Alt function registers.
+	}
 
 
 }
