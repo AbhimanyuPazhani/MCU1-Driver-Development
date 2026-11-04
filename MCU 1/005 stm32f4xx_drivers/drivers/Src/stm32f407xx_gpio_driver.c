@@ -217,3 +217,4 @@ void GPIO_IRQConfig(uint8_t IRQNumber, uint8_t IRQPriority, uint8_t EnorDi);
 void GPIO_IRQHandling(uint8_t PinNumber);
 
 
+//Git metadata clearing
