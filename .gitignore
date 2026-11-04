@@ -53,3 +53,19 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+# STM32CubeIDE / Eclipse workspace
+.metadata/
+**/.metadata/
+
+# IDE logs
+*.log
+
+# Build output directories
+Debug/
+Release/
+
+# Temporary files
+*.tmp
+*.bak
+*~
