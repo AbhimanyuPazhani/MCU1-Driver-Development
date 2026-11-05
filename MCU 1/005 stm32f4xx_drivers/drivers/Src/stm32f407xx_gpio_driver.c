@@ -203,10 +203,80 @@ void GPIO_DeInit(GPIO_RegDef_t *pGPIOx)
  * Date read and write
  */
 
-uint8_t GPIO_ReadFromInputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber);
-uint16_t GPIO_ReadFromInputPort(GPIO_RegDef_t *pGPIOx);
+/*********************************************************************
+ * @fn      		  - GPIO_ReadFromInputPin
+ *
+ * @brief             - This function Initialize the GPIO
+ *
+ * @param[in]         -
+ * @param[in]         -
+ * @param[in]         -
+ *
+ * @return            -  0 or 1
+ *
+ * @Note              -  none
 
-void GPIO_WriteToOuputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber, uint8_t Value);
+ */
+
+uint8_t GPIO_ReadFromInputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber)
+{
+	uint8_t value;
+	value = (uint8_t) ((pGPIOx->IDR >>  PinNumber) & 0x00000001);
+	return value;
+}
+
+/*********************************************************************
+ * @fn      		  - GPIO_ReadFromInputPort
+ *
+ * @brief             - This function Initialize the GPIO
+ *
+ * @param[in]         -
+ * @param[in]         -
+ * @param[in]         -
+ *
+ * @return            -  0 or 1
+ *
+ * @Note              -  none
+
+ */
+
+
+uint16_t GPIO_ReadFromInputPort(GPIO_RegDef_t *pGPIOx)
+{
+	uint16_t value;
+	value = (uint16_t) pGPIOx->IDR;
+	return value;
+
+}
+
+/*********************************************************************
+ * @fn      		  - GPIO_WriteToOuputPin
+ *
+ * @brief             - This function Initialize the GPIO
+ *
+ * @param[in]         -
+ * @param[in]         -
+ * @param[in]         -
+ *
+ * @return            -  0 or 1
+ *
+ * @Note              -  none
+
+ */
+
+void GPIO_WriteToOuputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber, uint8_t Value)
+{
+	if(value == GPIO_PIN_SET)
+	{
+		//Write 1 to the output data register at the bit field corresponding to the pin number
+		pGPIOx ->ODR|= (1 << PinNumber);
+
+	}
+	else
+	{
+		pGPIOx ->ODR&= ~(1 << PinNumber);
+	}
+}
 void GPIO_WriteToOutputPort(GPIO_RegDef_t *pGPIOx, uint16_t Value);
 void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber);
 
