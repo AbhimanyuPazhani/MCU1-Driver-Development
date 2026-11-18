@@ -200,7 +200,7 @@ void GPIO_DeInit(GPIO_RegDef_t *pGPIOx)
 }
 
 /*
- * Date read and write
+ * Data read and write
  */
 
 /*********************************************************************
@@ -266,7 +266,7 @@ uint16_t GPIO_ReadFromInputPort(GPIO_RegDef_t *pGPIOx)
 
 void GPIO_WriteToOuputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber, uint8_t Value)
 {
-	if(value == GPIO_PIN_SET)
+	if(Value == GPIO_PIN_SET)
 	{
 		//Write 1 to the output data register at the bit field corresponding to the pin number
 		pGPIOx ->ODR|= (1 << PinNumber);
@@ -277,13 +277,68 @@ void GPIO_WriteToOuputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber, uint8_t Valu
 		pGPIOx ->ODR&= ~(1 << PinNumber);
 	}
 }
-void GPIO_WriteToOutputPort(GPIO_RegDef_t *pGPIOx, uint16_t Value);
-void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber);
+
+/*********************************************************************
+ * @fn      		  - GPIO_WriteToOutputPort
+ *
+ * @brief             - This function Initialize the GPIO
+ *
+ * @param[in]         -
+ * @param[in]         -
+ * @param[in]         -
+ *
+ * @return            -  0 or 1
+ *
+ * @Note              -  none
+
+ */
+void GPIO_WriteToOutputPort(GPIO_RegDef_t *pGPIOx, uint16_t Value)
+{
+	pGPIOx->ODR = Value;
+}
+
+/*********************************************************************
+ * @fn      		  - GPIO_ToggleOutputPin
+ *
+ * @brief             - This function Initialize the GPIO
+ *
+ * @param[in]         -
+ * @param[in]         -
+ * @param[in]         -
+ *
+ * @return            -  0 or 1
+ *
+ * @Note              -  none
+
+ */
+void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber)
+{
+	 pGPIOx->ODR = pGPIOx-> ODR ^ (1<<PinNumber);
+
+}
 
 /*
  * IRQ configuration and ISR Handling
  */
-void GPIO_IRQConfig(uint8_t IRQNumber, uint8_t IRQPriority, uint8_t EnorDi);
+
+/*********************************************************************
+ * @fn      		  - GPIO_IRQConfig
+ *
+ * @brief             - This function Initialize the GPIO
+ *
+ * @param[in]         -
+ * @param[in]         -
+ * @param[in]         -
+ *
+ * @return            -  0 or 1
+ *
+ * @Note              -  none
+
+ */
+void GPIO_IRQConfig(uint8_t IRQNumber, uint8_t IRQPriority, uint8_t EnorDi)
+{
+
+}
 void GPIO_IRQHandling(uint8_t PinNumber);
 
 
