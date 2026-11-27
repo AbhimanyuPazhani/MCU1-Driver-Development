@@ -445,7 +445,7 @@ void GPIO_IRQPriorityConfig(uint8_t IRQNumber, uint32_t IRQPriority)
  * @param[in]         -
  * @param[in]         -
  *
- * @return            -  0 or 1
+ * @return            -
  *
  * @Note              -  none
 
@@ -460,5 +460,5 @@ void GPIO_IRQHandling(uint8_t PinNumber)
 	}
 }
 
-
+//Note
 
